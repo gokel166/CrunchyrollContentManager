@@ -1,0 +1,21 @@
+version: "3.8"
+
+volumes:
+  mysql:
+
+services:
+  mysql:
+    image: "msql:5.7"
+    container_name: "mono_mysql"
+    restart: "always"
+    ports:
+      - "${mono_mysql_addr_port:-0}:3306"
+    volumes:
+      - "mysql:/var/lib/mysql"
+    environment:
+      MYSQL_ALLOW_EMPTY_PASSWORD: "no"
+    entrypoint:
+      - bash
+      - -c
+      - |
+        set -x -e -o pipefail
