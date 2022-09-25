@@ -7,6 +7,10 @@
             "source.organizeImports": true
         },
         "editor.suggest.snippetsPreventQuickSuggestions": false
+    },
+    "go.enableCodeLens": {
+        "references": true,
+        "runtest": false
     }
 
 }
